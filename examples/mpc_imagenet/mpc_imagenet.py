@@ -17,6 +17,12 @@ from examples.meters import AccuracyMeter
 from examples.util import NoopContextManager
 
 
+logging.basicConfig(
+    format='%(asctime)s %(levelname)-8s %(message)s',
+    level=logging.INFO,
+    datefmt='%Y-%m-%d %H:%M:%S')
+
+
 try:
     from crypten.nn.tensorboard import SummaryWriter
 except ImportError:  # tensorboard not installed
