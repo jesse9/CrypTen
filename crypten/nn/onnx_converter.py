@@ -179,8 +179,9 @@ class FromOnnx:
                 attributes["shape"] = constant_module[1].value.long().tolist()
                 constant_module = None
 
-            if TF_AND_TF2ONNX:
-                parameters = _sync_tensorflow_parameters(parameters, node.op_type)
+            # if TF_AND_TF2ONNX:
+            #     parameters = _sync_tensorflow_parameters(parameters, node.op_type)
+            parameters = _sync_tensorflow_parameters(parameters, node.op_type)
 
             # add CrypTen module to graph
             crypten_module = crypten_class.from_onnx(
